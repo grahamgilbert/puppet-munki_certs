@@ -56,6 +56,6 @@ mac_admin::osx_defaults { 'UseClientCertificate':
   domain => '/Library/Preferences/ManagedInstalls',
   key    => 'UseClientCertificate',
   type   => 'bool',
-  value  => 'TRUE',
+  value  => true,
 }
 }
