@@ -58,4 +58,4 @@ mac_admin::osx_defaults { 'UseClientCertificate':
   type   => 'bool',
   value  => 'TRUE',
 }
-mac_admin::osx_defaults
+}
