@@ -1,5 +1,9 @@
 class munki_certs{
 
+file { '/Library/Managed Installs/':
+  ensure  => directory,
+}
+
 file { '/Library/Managed Installs/certs/':
   ensure  => directory,
   owner   => 'root',
