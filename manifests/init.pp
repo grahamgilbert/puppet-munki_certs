@@ -2,6 +2,8 @@ class munki_certs{
 
 if versioncmp($::clientversion, '3') > 0 {
     notice($::clientversion)
+}else{
+  notice('running greater than puppet 3')
 }
 
 if $::clientversion > 4 {
