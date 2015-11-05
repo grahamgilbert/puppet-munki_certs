@@ -1,5 +1,9 @@
 class munki_certs{
 
+if versioncmp($::clientversion, '3') > 0 {
+    notice($::clientversion)
+}
+
 if $::clientversion > 4 {
   $dir = '/etc/puppetlabs/puppet'
 }
