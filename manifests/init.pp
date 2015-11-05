@@ -1,12 +1,5 @@
 class munki_certs{
 
-  if $::facterversion > 3{
-    $dir = '/etc/puppetlabs/puppet'
-  }
-  else {
-    $dir = '/etc/puppet'
-  }
-
 file { '/Library/Managed Installs/':
   ensure  => directory,
 }
@@ -22,7 +15,7 @@ file { '/Library/Managed Installs/certs/ca.pem':
   mode   => '0640',
   owner  => root,
   group  => wheel,
-  source => "${dir}/ssl/certs/ca.pem'",
+  source => '/etc/puppet/ssl/certs/ca.pem',
   require => File['/Library/Managed Installs/certs/'],
 }
 
@@ -30,7 +23,7 @@ file { '/Library/Managed Installs/certs/clientcert.pem':
   mode   => '0640',
   owner  => root,
   group  => wheel,
-  source => "${dir}/ssl/certs/${clientcert}.pem",
+  source => "/etc/puppet/ssl/certs/${clientcert}.pem",
   require => File['/Library/Managed Installs/certs/'],
 }
 
@@ -38,7 +31,7 @@ file { '/Library/Managed Installs/certs/clientkey.pem':
   mode   => '0640',
   owner  => root,
   group  => wheel,
-  source => "${dir}/ssl/private_keys/${clientcert}.pem",
+  source => "/etc/puppet/ssl/private_keys/${clientcert}.pem",
   require => File['/Library/Managed Installs/certs/'],
 }
 
