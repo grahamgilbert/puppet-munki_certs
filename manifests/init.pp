@@ -2,16 +2,18 @@ class munki_certs{
 
 if versioncmp($::clientversion, '3') > 0 {
     notice($::clientversion)
+    $dir = '/etc/puppetlabs/puppet'
 }else{
   notice('running greater than puppet 3')
-}
-
-if $::clientversion > 4 {
-  $dir = '/etc/puppetlabs/puppet'
-}
-else{
   $dir = '/etc/puppet'
 }
+
+# if $::clientversion > 4 {
+  
+# }
+# else{
+  
+# }
 
 file { '/Library/Managed Installs/':
   ensure  => directory,
