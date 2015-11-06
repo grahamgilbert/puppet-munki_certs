@@ -1,10 +1,8 @@
 class munki_certs{
 
-if versioncmp($::clientversion, '3') > 0 {
-    notice($::clientversion)
-    $dir = '/etc/puppetlabs/puppet'
+if versioncmp($::clientversion, '4') > 0 {
+  $dir = '/etc/puppetlabs/puppet'
 }else{
-  notice('running greater than puppet 3')
   $dir = '/etc/puppet'
 }
 
